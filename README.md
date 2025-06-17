@@ -1,6 +1,4 @@
-# uii_gateaway
-
-A new Flutter project.
+# uii_gateaway UI Clone
 
 ## Getting Started
 
