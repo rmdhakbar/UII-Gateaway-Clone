@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+import 'package:uii_gateaway/components/my_app_bar.dart';
+import 'package:uii_gateaway/components/my_search_bar.dart';
+import 'package:uii_gateaway/theme/my_color.dart';
+import 'package:uii_gateaway/models/menu_item.dart';
+import '../components/menu_card.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Get the menu items data
+    final menuItems = MenuItem().menuItem;
+
+    return Scaffold(
+      backgroundColor: MyColor.white,
+      // bottom navigation bar
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Container(
+          child: Text(
+            'CopyRight: Badan Sistem Informasi Universitas Islam Indonesia',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12),
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // AppBar
+            MyAppBar(),
+
+            // search bar
+            MySearchBar(),
+
+            // Menu grid
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.9,
+                ),
+                itemCount: menuItems.length,
+                itemBuilder: (context, index) {
+                  return MenuCard(menu: menuItems[index]);
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
