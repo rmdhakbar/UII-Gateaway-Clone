@@ -19,10 +19,31 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Container(
-          child: Text(
-            'CopyRight: Badan Sistem Informasi Universitas Islam Indonesia',
+          child: RichText(
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12),
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: "RAMADHANI AKBAR SULAKSANA - 22523095\n",
+                  style: TextStyle(
+                    color: MyColor.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Copyright © 2023 ',
+                  style: TextStyle(color: MyColor.black, fontSize: 12),
+                ),
+                TextSpan(
+                  text: 'Universitas Islam Indonesia',
+                  style: TextStyle(
+                    color: MyColor.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
