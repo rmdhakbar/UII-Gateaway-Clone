@@ -12,7 +12,7 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
       decoration: BoxDecoration(color: MyColor.grey),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
