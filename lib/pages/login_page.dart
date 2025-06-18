@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uii_gateaway/components/my_button.dart';
 import 'package:uii_gateaway/components/my_textfield.dart';
+import 'package:uii_gateaway/theme/my_color.dart';
 
 import 'home_page.dart';
 
@@ -17,6 +18,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
